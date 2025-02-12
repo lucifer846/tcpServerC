@@ -11,13 +11,12 @@ int main(){
     int s, c; // socket and client
 
     socklen_t addrlen; // socklen_t is typedef for unsigned int .... ipAddr is 32bit
-    struct sockaddr_in srv, cli; // structures for bind
+    struct sockaddr_in srv; // structures for bind
     addrlen = 0;
     char buff[512] = {0};
     char *data;
 
     memset(&srv, 0, sizeof(srv));
-    memset(&cli, 0, sizeof(cli));
 
     s = socket(AF_INET, SOCK_STREAM, 0); // returns file descriptor
     if (s<0){
